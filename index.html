@@ -1,0 +1,52 @@
+<!-- 
+Javascript Pixel Image Animation Effects - Html CSS
+https://www.youtube.com/watch?v=6vtg3Abf6PE
+# ped: **** Very cool
+- made 3 changes to code use different size images; 
+ - search, ped 1. , ped 2. , ped 3. 
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pixel Image Animation</title>
+    <link rel="stylesheet" href="./style.css">
+    <!-- <script src="./script.js" defer></script> -->
+</head>
+
+<body>
+    <div class="box">
+        <div id="pixel"></div>
+    </div>
+
+    <script>
+        // let w = 30;
+        // let h = 30;
+        // ped 1. changes to fit my image size
+        let w = 45;
+        let h = 32;
+
+        function pixel() {
+            for (var i = 0; i < h; i++) {
+                for (var j = 0; j < w; j++) {
+                    let span = document.createElement('span');
+                    // let random = Math.random() * 2;
+                    let random = Math.random() * 1;
+                    let randomFixed = random.toFixed(2);
+
+                    document.getElementById('pixel').appendChild(span);
+                    span.style.left = j * 10 + 'px';
+                    span.style.top = i * 10 + 'px';
+                    span.style.backgroundPosition = -j * 10 + 'px ' + -i * 10 + 'px, center';
+                    span.style.animationDelay = randomFixed + 's';
+                }
+            }
+        }
+        pixel();
+    </script>
+</body>
+
+</html>
